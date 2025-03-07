@@ -1,0 +1,34 @@
+<!-- views/vegetables/show.ejs -->
+
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="/stylesheets/style.css" />
+    <title>
+        <%= vegetable.name %>
+    </title> <!-- Dynamic title based on vegetable name -->
+</head>
+
+<body>
+    <h1>
+        <%= vegetable.name %>
+    </h1>
+    <!-- Conditional rendering based on vegetable's readiness -->
+    <% if(vegetable.isReadyToEat){ %>
+        <p>This vegetable is ready to eat!</p>
+    <% } else { %>
+        <p>This vegetable is not ready to eat!</p>
+    <% } %>
+    
+    <!-- new delete button -->
+    <form action="/vegetables/<%= vegetable._id %>?_method=DELETE" method="POST">
+        <button type="submit">Delete <%= vegetable.name %></button>
+    </form>
+
+    <!-- add edit page link here -->
+    <a href="/vegetables/<%= vegetable._id %>/edit">Edit <%= vegetable.name %></a>
+    <a href="/vegetables">Back to Vegetables</a>
+</body>

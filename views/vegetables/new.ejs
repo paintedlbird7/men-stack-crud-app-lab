@@ -1,0 +1,16 @@
+<!-- views/vegetables/new.ejs -->
+
+<body>
+  <h1>Create a New Vegetable!</h1>
+  <form action="/vegetables" method="POST">
+    <label for="name">Name:</label>
+    <input type="text" name="name" id="name" />
+
+    <label for="isReadyToEat">Ready to Eat?</label>
+    <input type="checkbox" name="isReadyToEat" id="isReadyToEat" />
+
+    <button type="submit">Add Vegetable</button>
+    <nav><ul><li><a href="/vegetables/">Back to Vegetables</a></li></ul></nav>
+
+  </form>
+</body>
