@@ -19,16 +19,25 @@
     <!-- Conditional rendering based on vegetable's readiness -->
     <% if(vegetable.isReadyToEat){ %>
         <p>This vegetable is ready to eat!</p>
-    <% } else { %>
-        <p>This vegetable is not ready to eat!</p>
-    <% } %>
-    
-    <!-- new delete button -->
-    <form action="/vegetables/<%= vegetable._id %>?_method=DELETE" method="POST">
-        <button type="submit">Delete <%= vegetable.name %></button>
-    </form>
+        <% } else { %>
+            <p>This vegetable is not ready to eat!</p>
+            <% } %>
+                <!-- new delete button -->
+                <form action="/vegetables/<%=vegetable._id%>?_method=DELETE" method="POST">
+                    <button class="delete-button" type="submit">Delete <%= vegetable.name %></button>
+                </form>
+                <!-- add edit page link here -->
+                <a href="/vegetables/<%= vegetable._id %>/edit">Edit <%= vegetable.name %></a>
+                <a href="/vegetables">Back to Vegetables</a>
+                 <!-- show.ejs -->
 
-    <!-- add edit page link here -->
-    <a href="/vegetables/<%= vegetable._id %>/edit">Edit <%= vegetable.name %></a>
-    <a href="/vegetables">Back to Vegetables</a>
+    <div class="vegetable-details">
+      <!-- show page content -->
+    </div>
+    <a class="vegetables-index-link" href="/vegetables">
+      <div class="index-link-text">Back to Vegetables</div>
+    </a>
+ 
 </body>
+
+</html>

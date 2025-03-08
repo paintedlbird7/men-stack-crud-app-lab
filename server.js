@@ -8,6 +8,8 @@ const mongoose = require("mongoose"); // require package
 const methodOverride = require("method-override");
 const morgan = require("morgan");
 const path = require("path");
+// static assets middleware - used to sent static assets 9CSS, Imgs and DOM malipulation JS) to the client
+app.use(express.static(path.join(__dirname, "public")));
 
 // Connect to MongoDB using the connection string in the .env file
 mongoose.connect(process.env.MONGODB_URI);
